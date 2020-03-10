@@ -4,15 +4,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django_otp.admin import OTPAdminSite
 
-from posts.views import index, blog, post, contact, about, InstaView
+from posts.views import index, blog, post, about, InstaView
 
 admin.site.__class__ = OTPAdminSite
 
 urlpatterns = [
-    path('beyourselfannblog/', admin.site.urls, name='admin'),
+    path('admin/', admin.site.urls, name='admin'),
     path('', index),
     path('insta/', InstaView.as_view()),
-    path('contact/', contact),
     path('about/', about),
     path('blog/', blog, name='post-list'),
     path('post/<slug>/', post, name='post-detail'),

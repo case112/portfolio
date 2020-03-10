@@ -10,7 +10,7 @@ class InstaView(TemplateView):
 
     template_name = "insta.html"
     extra_context={
-        "instagram_profile_name": "anngretts"
+        "instagram_profile_name": "niijustongi"
     }
 
 

@@ -81,3 +81,7 @@ max-width: 100%;
  	color: #db2b42 !important;
  	font-weight:bold;
  }
+
+#clickableAwesomeFont {
+     cursor: pointer
+}
