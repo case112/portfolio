@@ -1,17 +1,8 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from . models import Post, Page
-from .forms import CommentForm
-from django.views.generic.base import TemplateView
+from . forms import CommentForm
 from django.contrib import messages
-
-
-class InstaView(TemplateView):
-
-    template_name = "insta.html"
-    extra_context={
-        "instagram_profile_name": "niijustongi"
-    }
 
 
 
@@ -23,7 +14,7 @@ def index(request):
 		'object_list': featured,
 		'latest': latest,
 		'header': header,
-		'instagram_profile_name': 'anngretts',
+		'instagram_profile_name': 'niijustongi',
 	}
 	return render(request, 'index.html', context)
 
