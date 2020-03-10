@@ -1,4 +1,5 @@
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -11,19 +12,28 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 
+RECAPTCHA_PUBLIC_KEY = config('RECAPTCHA_PUBLIC_KEY')
 
+RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY')
 
-RECAPTCHA_PUBLIC_KEY = '6LfpIsgUAAAAAJdpQV2AiRTM8gDvSU7EJh-IgU3T'
-
-RECAPTCHA_PRIVATE_KEY = '6LfpIsgUAAAAAIs7HurM47b4GMjkyLk4zXkHPxV5'
-
-OTP_TOTP_ISSUER = "Portfolio"
+OTP_TOTP_ISSUER = config('OTP_TOTP_ISSUER')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = []
+
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
 
 
 # Application definition
@@ -82,17 +92,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'blog.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
