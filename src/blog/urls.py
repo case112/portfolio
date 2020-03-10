@@ -6,7 +6,7 @@ from django_otp.admin import OTPAdminSite
 
 from posts.views import index, blog, post, about
 
-admin.site.__class__ = OTPAdminSite
+#admin.site.__class__ = OTPAdminSite
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),

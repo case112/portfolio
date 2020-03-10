@@ -17,7 +17,7 @@ RECAPTCHA_PUBLIC_KEY = '6LfpIsgUAAAAAJdpQV2AiRTM8gDvSU7EJh-IgU3T'
 
 RECAPTCHA_PRIVATE_KEY = '6LfpIsgUAAAAAIs7HurM47b4GMjkyLk4zXkHPxV5'
 
-OTP_TOTP_ISSUER = "Anngrett's blog"
+OTP_TOTP_ISSUER = "Portfolio"
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
